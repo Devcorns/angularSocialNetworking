@@ -19,15 +19,25 @@
                         <div formGroupName="signupCredentials">
 
                             <div class="form-group has-feedback has-feedback-left">
-                                <input type="text" class="form-control" placeholder="Username" formControlName="email">
+                                <input type="text" class="form-control" placeholder="email" formControlName="email">
                                 <div class="form-control-feedback">
                                     <i class="icon-user text-muted"></i>
+                                </div>
+                                <div class="help-block text-danger" *ngIf="form.controls.signupCredentials.controls.email.invalid && (form.controls.signupCredentials.controls.email.dirty || form.controls.signupCredentials.controls.email.touched)">
+                                
+                                    <span  class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.email.errors.pattern">Enter a valid email.</span>
+                                    <span  class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.email.errors.required">Name is required.</span>
                                 </div>
                             </div>
                             <div class="form-group has-feedback has-feedback-left">
                                 <input type="text" class="form-control" placeholder="Mobile" formControlName="mobno">
                                 <div class="form-control-feedback">
                                     <i class="icon-user text-muted"></i>
+                                </div>
+                                <div class="help-block text-danger" *ngIf="form.controls.signupCredentials.controls.mobno.invalid && (form.controls.signupCredentials.controls.mobno.dirty || form.controls.signupCredentials.controls.mobno.touched)">
+                                    <span  class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.mobno.errors"></span>
+                                    <span  class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.mobno.errors.required">Mobile no is required.</span>
+                                    <span  class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.mobno.errors.minlength||form.controls.signupCredentials.controls.mobno.errors.maxlength">Enter a valid no.</span>
                                 </div>
                             </div>
 
@@ -36,11 +46,21 @@
                                 <div class="form-control-feedback">
                                     <i class="icon-lock2 text-muted"></i>
                                 </div>
+                                <div class="help-block text-danger" *ngIf="form.controls.signupCredentials.controls.password.invalid && (form.controls.signupCredentials.controls.password.dirty || form.controls.signupCredentials.controls.password.touched)">
+                                    <span  class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.password.errors.required">Please enter password.</span>
+                                    <span  class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.password.errors.minlength">Your password should be greater than 8 letters.</span>
+                                </div>
                             </div>
                             <div class="form-group has-feedback has-feedback-left">
-                                <input type="password" class="form-control" placeholder="re enter your password" formControlName="password-re">
+                                <input type="password" class="form-control" placeholder="re enter your password" formControlName="repassword">
                                 <div class="form-control-feedback">
                                     <i class="icon-lock2 text-muted"></i>
+                                </div>
+                                <div class="help-block text-danger" *ngIf="form.controls.signupCredentials.controls.repassword.invalid && (form.controls.signupCredentials.controls.repassword.dirty || form.controls.signupCredentials.controls.repassword.touched)">
+                                    <span  class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.repassword.errors.required">Please enter same password.</span>
+                                    <span  class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.repassword.errors.minlength">Your password should be greater than 8 letters.</span>
+                                    <span class="alert alert-danger" *ngIf="form.controls.signupCredentials.controls.repassword.errors?.MatchPassword">Password not match</span>
+                                    
                                 </div>
                             </div>
 
@@ -60,7 +80,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="button" (click)="checkForm()" class="btn bg-pink-400 btn-block">Signup <i class="icon-arrow-right14 position-right"></i></button>
+                                <button  type="button" (click)="checkForm()" class="btn bg-pink-400 btn-block">Signup <i class="icon-arrow-right14 position-right"></i></button>
                             </div>
                         </div>
                         <div class="content-divider text-muted form-group hide"><span>or sign in with</span></div>

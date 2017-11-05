@@ -9,11 +9,15 @@ import { SignupComponent } from "./auth/signup/signup.component";
 
 
 import { UserModule } from "./user/user.module";
+import { AdminComponent } from './admin/admin.component';
+import { PermissionsComponent } from './admin/permissions/permissions.component';
+import { CompanyoverviewComponent } from './admin/companyoverview/companyoverview.component';
+import { TaskpanelComponent } from './admin/taskpanel/taskpanel.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,LoginComponent, SignupComponent
+    AppComponent,LoginComponent, SignupComponent, AdminComponent, PermissionsComponent, CompanyoverviewComponent, TaskpanelComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ export class LoginComponent {
     this.form = fb.group({
       loginCredentials: fb.group({
         email: new FormControl('', [Validators.required, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)]),
-        password: new FormControl('', [Validators.required, Validators.minLength(2)]),
+        password: new FormControl('', [Validators.required,Validators.minLength(8)]),
       })
      
     });
