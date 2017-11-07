@@ -1,0 +1,14 @@
+ .taskpanel-boxes .circle-box {
+     border: 1px solid #ddd;
+     background: #ddd;
+     border-radius: 50%;
+     width: 30px;
+     height: 30px;
+ }
+ 
+ .taskpanel-boxes .circle-box i {
+     position: relative;
+     top: 50%;
+     left: 50%;
+     /* transform: transition(-50%, -50%) !important; */
+ }

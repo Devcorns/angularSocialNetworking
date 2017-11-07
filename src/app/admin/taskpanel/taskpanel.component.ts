@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-taskpanel',
+  selector: 'taskpanel',
   templateUrl: './taskpanel.component.html',
   styleUrls: ['./taskpanel.component.css']
 })
-export class TaskpanelComponent implements OnInit {
+export class TaskpanelComponent{
 
   constructor() { }
 
-  ngOnInit() {
-  }
+
 
 }

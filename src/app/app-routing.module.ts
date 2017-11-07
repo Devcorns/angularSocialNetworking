@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
  */
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
+import { TaskpanelComponent } from './admin/taskpanel/taskpanel.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginComponent
+  },
+   {
+    path:'taskpanel',
+    component: TaskpanelComponent
   },
   {
     path:'user',
