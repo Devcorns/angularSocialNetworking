@@ -11,6 +11,7 @@ export class SignupComponent {
   form: FormGroup;
  
   constructor(public fb: FormBuilder) {
+    $(document).ready(function() { console.log('jquery is working'); });
     this.form = this.fb.group({
       signupCredentials: fb.group({
         email: new FormControl('', [Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)]),
