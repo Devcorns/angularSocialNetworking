@@ -14,7 +14,6 @@ import { PermissionsComponent } from './admin/permissions/permissions.component'
 import { CompanyoverviewComponent } from './admin/companyoverview/companyoverview.component';
 import { TaskpanelComponent } from './admin/taskpanel/taskpanel.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,LoginComponent, SignupComponent, AdminComponent, PermissionsComponent, CompanyoverviewComponent, TaskpanelComponent

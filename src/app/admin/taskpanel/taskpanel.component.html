@@ -7,7 +7,7 @@
             <!-- Main content -->
             <div class="content-wrapper">
                 <div class="row taskpanel-boxes">
-                    <div class="col-md-7">
+                    <div [ngClass]="{'col-md-offset-2 col-md-8':!leftPanel, 'col-md-7':leftPanel}">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a class="btn btn-panel">Add Task</a>
@@ -21,7 +21,7 @@
                                     </div>
                                     <div class="media-body">
                                         <div class="form-group">
-                                            <input class="media-heading form-control" placeholder="Enter Task">
+                                            <input class="media-heading form-control" placeholder="Enter Task" (click)="leftPanel = true">
                                         </div>
                                     </div>
                                 </div>
@@ -321,12 +321,127 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5" *ngIf="leftPanel">
                         <div class="panel panel-default">
                             <div class="panel-heading">
+                                <input type="text" value="Washington,Alaska" data-role="tagsinput" class="tagsinput-typeahead">
+
 
                             </div>
                             <div class="panel-body">
+                                <div class="media">
+                                    <div class="media-left">
+
+                                        <div class="circle-box">
+
+                                            <i class="icon-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="form-group">
+                                            <input class="media-heading form-control" placeholder="Your task is here">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" placeholder="Description of your task"></textarea>
+                                        </div>
+                                        <div class="timeline-row">
+
+
+                                            <div class="panel panel-flat timeline-content">
+                                                <div class="panel-heading">
+                                                    <h6 class="panel-title">Conversation with James</h6>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <ul class="media-list chat-list content-group">
+
+
+                                                        <li class="media reversed">
+                                                            <div class="media-body">
+                                                                <div class="media-content">Thus superb the tapir the wallaby blank frog execrably much since dalmatian by in hot. Uninspiringly arose mounted stared one curt safe</div>
+                                                                <span class="media-annotation display-block mt-10">Tue, 8:12 am <a href="#"><i class="icon-pin-alt position-right text-muted"></i></a></span>
+                                                            </div>
+
+                                                            <div class="media-right">
+                                                                <a href="assets/images/placeholder.jpg">
+                                                                    <img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+                                                                </a>
+                                                            </div>
+                                                        </li>
+
+                                                        <li class="media">
+                                                            <div class="media-left">
+                                                                <a href="assets/images/placeholder.jpg">
+                                                                    <img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="media-body">
+                                                                <div class="media-content">Tolerantly some understood this stubbornly after snarlingly frog far added insect into snorted more auspiciously heedless drunkenly jeez foolhardy oh.</div>
+                                                                <span class="media-annotation display-block mt-10">Wed, 4:20 pm <a href="#"><i class="icon-pin-alt position-right text-muted"></i></a></span>
+                                                            </div>
+                                                        </li>
+
+                                                        <li class="media reversed">
+                                                            <div class="media-body">
+                                                                <div class="media-content">Satisfactorily strenuously while sleazily dear frustratingly insect menially some shook far sardonic badger telepathic much jeepers immature much hey.</div>
+                                                                <span class="media-annotation display-block mt-10">2 hours ago <a href="#"><i class="icon-pin-alt position-right text-muted"></i></a></span>
+                                                            </div>
+
+                                                            <div class="media-right">
+                                                                <a href="assets/images/placeholder.jpg">
+                                                                    <img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+                                                                </a>
+                                                            </div>
+                                                        </li>
+
+                                                        <li class="media">
+                                                            <div class="media-left">
+                                                                <a href="assets/images/placeholder.jpg">
+                                                                    <img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="media-body">
+                                                                <div class="media-content">a Grunted smirked and grew less but rewound much despite and impressive via alongside out and gosh easy manatee dear ineffective yikes.</div>
+                                                                <span class="media-annotation display-block mt-10">13 minutes ago <a href="#"><i class="icon-pin-alt position-right text-muted"></i></a></span>
+                                                            </div>
+                                                        </li>
+
+                                                        <li class="media reversed">
+                                                            <div class="media-body">
+                                                                <div class="media-content"><i class="icon-menu display-block"></i></div>
+                                                            </div>
+
+                                                            <div class="media-right">
+                                                                <a href="assets/images/placeholder.jpg">
+                                                                    <img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+                                                                </a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+
+                                                    <textarea name="enter-message" class="form-control content-group" rows="3" cols="1" placeholder="Enter your message..."></textarea>
+
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <ul class="icons-list icons-list-extended mt-10">
+                                                                <li><a href="#" data-popup="tooltip" title="Send photo" data-container="body"><i class="icon-file-picture"></i></a></li>
+                                                                <li><a href="#" data-popup="tooltip" title="Send video" data-container="body"><i class="icon-file-video"></i></a></li>
+                                                                <li><a href="#" data-popup="tooltip" title="Send file" data-container="body"><i class="icon-file-plus"></i></a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="col-xs-6 text-right">
+                                                            <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-circle-right2"></i></b> Send</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -343,3 +458,5 @@
 
     </div>
 </div>
+
+<!-- /theme JS files -->
