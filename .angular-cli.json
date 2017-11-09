@@ -25,6 +25,8 @@
             "assets/js/core/libraries/jquery.min.js",
             "assets/js/core/libraries/bootstrap.min.js"
 
+
+
         ],
         "environmentSource": "environments/environment.ts",
         "environments": {
