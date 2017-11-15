@@ -10,7 +10,7 @@
                     <div [ngClass]="{'col-md-offset-2 col-md-8':!leftPanel, 'col-md-7':leftPanel}">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <a class="btn btn-panel">Add Task</a>
+                                <h2 class="no-margin">Tasks</h2>
                             </div>
                             <div class="panel-body">
                                 <div class="media">
@@ -25,6 +25,15 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="row no-margin">
+                                    <div class="col-md-12 " [ngClass]="{'text-right':!leftPanel,'text-left':leftPanel}">
+                                        <a class="btn btn-primary btn-xs">Add Task</a>
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
                         <div class="panel panel-flat hide">
@@ -322,16 +331,11 @@
                         </div>
                     </div>
                     <div class="col-md-5" *ngIf="leftPanel">
-                        <form [formGroup]="taskform">
+                        <form [formGroup]="taskform" (ngSubmit)="assignTask(taskform)">
                             <div formGroupName="taskPanelGroup">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <a data-target="#myModal" data-toggle="modal">trigger modal</a>
-                                        <div class="form-group">
-
-                                            <input type="text" value="Washington,Alaska" data-role="tagsinput" class="tagsinput-typeahead">
-                                        </div>
-
+                                        <h2 class="no-margin">Assign Task</h2>
 
 
                                     </div>
@@ -346,7 +350,7 @@
                                             </div>
                                             <div class="media-body">
                                                 <div class="form-group">
-                                                    <input class="media-heading form-control" placeholder="Your task is here" formControlName="taskHeading">
+                                                    <input class="media-heading form-control" placeholder="Your task is here" formControlName="taskHeading" [(ngModel)]="headingTask">
                                                 </div>
                                                 <div class="form-group">
 
@@ -419,6 +423,13 @@
                                         </div>
 
                                     </div>
+                                    <div class="panel-footer ">
+                                        <div class="row">
+                                            <div class="col-md-6 text-left"> <a data-target="#assignUser" data-toggle="modal" class="btn btn-primary btn-xs">Assign User</a></div>
+                                            <div class="col-md-6  text-right"><button type="submit" [disabled]="!taskform.valid" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-circle-right2"></i></b> Assign Task</button></div>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
 
@@ -440,7 +451,7 @@
 </div>
 
 <!-- /theme JS files -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="assignUser" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
