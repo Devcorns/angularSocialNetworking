@@ -20,10 +20,16 @@ import { SignupService } from './signup.service';
 export class SignupComponent {
   form: FormGroup;
  serviceTitle:any;
+ 
   constructor(public fb: FormBuilder,private _SignupService: SignupService) {
     $(document).ready(function() { console.log('jquery is working'); });
-    this.serviceTitle=this._SignupService.someMethod();
-    console.log(this.serviceTitle);
+    this._SignupService.someMethod().subscribe(res=>{
+      this.serviceTitle= res ;
+      
+      this.abc(this.serviceTitle);
+    });
+    
+    
     this.form = this.fb.group({
       signupCredentials: fb.group({
         email: new FormControl('', [Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)]),
@@ -34,6 +40,9 @@ export class SignupComponent {
      {validator: PasswordValidation.MatchPassword})
     
     });
+  }
+  abc(obj){
+    console.log(obj)
   }
   checkForm() {
     console.log(this.form);
