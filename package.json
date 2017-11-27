@@ -22,8 +22,12 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "@types/jquery": "^3.2.16",
+    "body-parser": "^1.18.2",
     "bootstrap3": "^3.3.5",
     "core-js": "^2.4.1",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.11.6",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },

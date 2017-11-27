@@ -2,16 +2,28 @@ import { Component,Inject } from "@angular/core";
 import { PasswordValidation } from "./custom.passwordValidation";
 import { Form,FormBuilder, FormGroup, Validators,FormControl} from "@angular/forms";
 
+
+
+
+/*
+* @Service of signup import 
+*/
+import { SignupService } from './signup.service';
+
+
 @Component({
     selector:'signup-layout',
-    templateUrl:'./signup.view.html'
+    templateUrl:'./signup.view.html',
+    providers: [SignupService]
 })
 
 export class SignupComponent {
   form: FormGroup;
- 
-  constructor(public fb: FormBuilder) {
+ serviceTitle:any;
+  constructor(public fb: FormBuilder,private _SignupService: SignupService) {
     $(document).ready(function() { console.log('jquery is working'); });
+    this.serviceTitle=this._SignupService.someMethod();
+    console.log(this.serviceTitle);
     this.form = this.fb.group({
       signupCredentials: fb.group({
         email: new FormControl('', [Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)]),
@@ -23,7 +35,6 @@ export class SignupComponent {
     
     });
   }
-
   checkForm() {
     console.log(this.form);
     localStorage.setItem("user-info", JSON.stringify(this.form.value.credentials));
