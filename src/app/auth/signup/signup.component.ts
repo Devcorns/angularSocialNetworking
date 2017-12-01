@@ -42,10 +42,19 @@ export class SignupComponent {
     });
   }
   abc(obj){
-    console.log(obj)
+    //console.log(obj)
   }
   checkForm() {
-    console.log(this.form);
-    localStorage.setItem("user-info", JSON.stringify(this.form.value.credentials));
+    console.log(this.form.value);
+    //localStorage.setItem("user-info", JSON.stringify(this.form.value.credentials));
+    this._SignupService.saveUser(this.form.value).subscribe(
+      res=>{
+        console.log(res);
+      },
+      error=>{console.error(error);
+      }
+
+    );
+
   }
 }
