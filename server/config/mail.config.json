@@ -1,0 +1,10 @@
+{
+	"mail": {
+		"service": "gmail",
+		"auth": {
+			"user": "taniya.s199@gmail.com",
+			"pass": "9675487058"
+		}
+	}
+	"from": "taniya.s199@gmail.com"
+}
